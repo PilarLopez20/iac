@@ -16,6 +16,6 @@ services:
   plan: free
   region: oregon
   buildCommand: pip install "fastapi[standard]"
-  startCommand: uvicorn main:app --reload
+  startCommand: fastapi run main.py
   rootDir: ./app
 version: "1"
