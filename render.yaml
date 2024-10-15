@@ -1,0 +1,21 @@
+# Exported from Render on 2024-10-11T21:59:11Z
+services:
+- type: web
+  name: app_web
+  runtime: python
+  repo: https://github.com/PilarLopez20/aplicacion-web
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: python3 app.py
+  rootDir: ./web
+- type: web
+  name: api_rest
+  runtime: python
+  repo: https://github.com/PilarLopez20/api-rest
+  plan: free
+  region: oregon
+  buildCommand: pip install "fastapi[standard]"
+  startCommand: uvicorn main:app --reload
+  rootDir: ./app
+version: "1"
